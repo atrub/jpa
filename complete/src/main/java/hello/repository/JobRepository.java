@@ -10,16 +10,23 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import java.util.List;
+
+
 /**
  * Spring Data  repository for the Job entity.
  */
 @SuppressWarnings("unused")
-@Repository
-public interface JobRepository extends JpaRepository<Job, Long> {
+@RepositoryRestResource(collectionResourceRel = "job", path = "job")
+public interface JobRepository extends PagingAndSortingRepository<Job, Long> {
 
-    @Query(value = "select distinct job from Job job left join fetch job.tasks",
+/*    @Query(value = "select distinct job from Job job left join fetch job.tasks",
         countQuery = "select count(distinct job) from Job job")
     Page<Job> findAllWithEagerRelationships(Pageable pageable);
+*/
 
     @Query(value = "select distinct job from Job job left join fetch job.tasks")
     List<Job> findAllWithEagerRelationships();

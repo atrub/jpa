@@ -15,10 +15,10 @@ public class Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		this.employee.save(new Employee("Igor", "Akulov", 55));
+/*		this.employee.save(new Employee("Igor", "Akulov", 55));
 		this.employee.save(new Employee("Daria", "Akulova", 11));
 		this.employee.save(new Employee("Alex", "Akulov", 20));
-		this.employee.save(new Employee("Margarita", "Akulova", 24));
+		this.employee.save(new Employee("Margarita", "Akulova", 24));*/
 	}
 
 	public static void main(String[] args) {

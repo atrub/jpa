@@ -12,7 +12,7 @@ import java.util.List;
  * Spring Data  repository for the Employee entity.
  */
 
-@RepositoryRestResource(collectionResourceRel = "eployee", path = "employee")
+@RepositoryRestResource(collectionResourceRel = "employee", path = "employee")
 public interface EmployeeRepository extends PagingAndSortingRepository<Employee, Long> {
     List<Employee> findByLastName(@Param("name") String name);
     List<Employee> findByFirstName(@Param("name") String name);

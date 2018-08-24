@@ -13,6 +13,5 @@ import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "country", path = "country")
 public interface CountryRepository extends PagingAndSortingRepository<Country, Long> {
-    List<Country> findByLastName(@Param("name") String name);
-    List<Country> findByFirstName(@Param("name") String name);
+    List<Country> findByCountryName(@Param("name") String name);
 }

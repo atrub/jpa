@@ -11,6 +11,5 @@ import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "country", path = "country")
 public interface DepartmentRepository extends PagingAndSortingRepository<Department, Long> {
-    List<Department> findByLastName(@Param("name") String name);
-    List<Department> findByFirstName(@Param("name") String name);
+    List<Department> findByDepartmentName(@Param("name") String name);
 }
